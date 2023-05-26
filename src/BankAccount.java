@@ -1,15 +1,15 @@
 public class BankAccount {
 
-    private final String accountNumber;
+    private final String ACCOUNTNUMBER;
     private double balance;
 
     public BankAccount(String accountNumber, double balance) {
-        this.accountNumber = accountNumber;
+        this.ACCOUNTNUMBER = accountNumber;
         this.balance = balance;
     }
 
     public String getAccountNumber() {
-        return accountNumber;
+        return ACCOUNTNUMBER;
     }
 
     public double getBalance() {
@@ -39,7 +39,7 @@ public class BankAccount {
     @Override
     public String toString() {
         return "BankAccount{" +
-                "accountNumber='" + accountNumber + '\'' +
+                "accountNumber='" + ACCOUNTNUMBER + '\'' +
                 ", balance=" + balance +
                 '}';
     }

@@ -1,32 +1,32 @@
 public class Transaction {
-    final String type;
-    final String sourceAccountNumber;
-    final String recipientAccountNumber;
-    final double amount;
-    final String transactionDetails;
+    final String TYPE;
+    final String SOURCEACCOUNTNUMBER;
+    final String RECIPIENTACCOUNTNUMBER;
+    final double AMOUNT;
+    final String TRANSACTIONDETAILS;
 
     public Transaction(String sourceAccountNumber, String recipientAccountNumber, double amount, String transactionDetails) {
-        this.type = "transfer";
-        this.sourceAccountNumber = sourceAccountNumber;
-        this.recipientAccountNumber = recipientAccountNumber;
-        this.amount = amount;
-        this.transactionDetails = transactionDetails;
+        this.TYPE = "transfer";
+        this.SOURCEACCOUNTNUMBER = sourceAccountNumber;
+        this.RECIPIENTACCOUNTNUMBER = recipientAccountNumber;
+        this.AMOUNT = amount;
+        this.TRANSACTIONDETAILS = transactionDetails;
     }
 
     public Transaction(String sourceAccountNumber, String recipientAccountNumber, double amount) {
-        this.type = "transfer";
-        this.sourceAccountNumber = sourceAccountNumber;
-        this.recipientAccountNumber = recipientAccountNumber;
-        this.amount = amount;
-        this.transactionDetails = null;
+        this.TYPE = "transfer";
+        this.SOURCEACCOUNTNUMBER = sourceAccountNumber;
+        this.RECIPIENTACCOUNTNUMBER = recipientAccountNumber;
+        this.AMOUNT = amount;
+        this.TRANSACTIONDETAILS = null;
     }
 
     public Transaction(char type, String account, double amount) {
         String tempType = null;
         String tempSource = null;
         String tempRecipient = null;
-        this.amount = amount;
-        this.transactionDetails = null;
+        this.AMOUNT = amount;
+        this.TRANSACTIONDETAILS = null;
         if (type == 'w') {
             tempType = "withdrawal";
             tempSource = account;
@@ -34,19 +34,19 @@ public class Transaction {
             tempType = "deposit";
             tempRecipient = account;
         }
-        this.type = tempType;
-        this.sourceAccountNumber = tempSource;
-        this.recipientAccountNumber = tempRecipient;
+        this.TYPE = tempType;
+        this.SOURCEACCOUNTNUMBER = tempSource;
+        this.RECIPIENTACCOUNTNUMBER = tempRecipient;
     }
 
     @Override
     public String toString() {
         return "Transaction{" +
-                "type='" + type + '\'' +
-                ", sourceAccountNumber='" + sourceAccountNumber + '\'' +
-                ", recipientAccountNumber='" + recipientAccountNumber + '\'' +
-                ", amount=" + amount +
-                ", transactionDetails='" + transactionDetails + '\'' +
+                "type='" + TYPE + '\'' +
+                ", sourceAccountNumber='" + SOURCEACCOUNTNUMBER + '\'' +
+                ", recipientAccountNumber='" + RECIPIENTACCOUNTNUMBER + '\'' +
+                ", amount=" + AMOUNT +
+                ", transactionDetails='" + TRANSACTIONDETAILS + '\'' +
                 '}';
     }
 }

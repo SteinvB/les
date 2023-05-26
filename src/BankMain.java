@@ -12,6 +12,7 @@ public class BankMain {
         bank.withdraw("NL02EFGH1234567890", 200);
         // Geld overmaken
         bank.transfer("NL01ABCD1234567890", "NL02EFGH1234567890", 2.30);
+        bank.transfer("NL01ABCD1234567890", "NL02EFGH1234567890", 2.30, "details testen");
         // Saldo controleren
         System.out.println(bank.getAccount("NL01ABCD1234567890").getBalance());
         // valuta conversie testen
