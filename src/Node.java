@@ -8,4 +8,9 @@ public class Node {
         this.X = x;
         this.Y = y;
     }
+
+    @Override
+    public String toString() {
+        return (this.NAME + " (" + this.X + ", " + this.Y + ")");
+    }
 }

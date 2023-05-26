@@ -14,7 +14,9 @@ public class TravelingSalesman {
         createNode("Den Haag", 52.076670,4.298610);
         createNode("Middelburg", 51.500000,3.613890);
         createNode("'s Hertogenbos", 51.699170,5.304170);
-        solve();
+        LinkedList<Node> optimal = solve();
+        System.out.println("optimal path (distance: " + getPathDistance(optimal) + "):");
+        printList(optimal);
     }
     public static void createNode(String name, double x, double y) {
         Node temp = new Node(name, x, y);
@@ -46,7 +48,21 @@ public class TravelingSalesman {
         return mIndex;
     }
 
-    public static void solve() {
+    public static void printList(LinkedList<Node> list) {
+        for (Node item : list) {
+            System.out.println(item.toString());
+        }
+    }
+
+    public static double getPathDistance(LinkedList<Node> list) {
+        double sum = 0;
+        for (int i = 0; i < list.size() - 1; i++) {
+            sum += getDistance(list.get(i), list.get(i + 1));
+        }
+        return sum;
+    }
+
+    public static LinkedList<Node> solve() {
         double min = -1;
         LinkedList<Node> optimalPath = new LinkedList<>();
         for (int i = 0; i < nodeList.size(); i++) {
@@ -60,10 +76,7 @@ public class TravelingSalesman {
                 optimalPath = currentPath;
             }
         }
-        System.out.println("optimal path (distance: " + min + "):");
-        for (Node node : optimalPath) {
-            System.out.println(node.NAME);
-        }
+        return optimalPath;
     }
 
     public static LinkedList<Node> solveForStart(int startIndex) {
